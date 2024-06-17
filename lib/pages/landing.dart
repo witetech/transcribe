@@ -32,22 +32,12 @@ class _LandingPageState extends State<LandingPage> {
               context.localization.loginSubtitle,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            const SizedBox(height: 32),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(context.localization.loginWithApple),
-            ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 signInWithGoogle();
               },
               child: Text(context.localization.loginWithGoogle),
-            ),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(context.localization.loginWithEmail),
             ),
           ],
         ),
