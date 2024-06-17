@@ -1,7 +1,16 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-void main() {
+// Package imports:
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+// Project imports:
+import 'package:transcribe/firebase.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await initializeFirebase();
   runApp(const MyApp());
 }
 
