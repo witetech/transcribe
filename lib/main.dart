@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -13,6 +14,7 @@ void main() async {
   FlutterNativeSplash.preserve(widgetsBinding: binding);
   await dotenv.load(fileName: '.env');
   await initializeFirebase();
+  await FirebaseAuth.instance.signInAnonymously();
   runApp(const MyApp());
   FlutterNativeSplash.remove();
 }
