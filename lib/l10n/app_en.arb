@@ -1,3 +1,8 @@
 {
-  "appName": "Transcribe"
+  "appName": "Transcribe",
+  "loginTitle": "Transcribe",
+  "loginSubtitle": "A simple tool for converting speech to text",
+  "loginWithApple": "Sign in with Apple",
+  "loginWithGoogle": "Sign in with Google",
+  "loginWithEmail": "Sign in with Email"
 }

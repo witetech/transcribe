@@ -19,6 +19,7 @@ type User = {
   displayName?: string;
   photoURL?: string;
   providers: string[];
+  createdAt?: Date;
 };
 
 const users = getFirestore()
@@ -32,6 +33,7 @@ export const createUserDocument = auth.user().onCreate(async (user) => {
     displayName: user.displayName,
     photoURL: user.photoURL,
     providers: user.providerData.map((provider) => provider.providerId),
+    createdAt: new Date(),
   };
 
   return await users.doc(user.uid).set(userObject);

@@ -2,20 +2,21 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 // Project imports:
+import 'package:transcribe/core/di.dart';
 import 'package:transcribe/core/firebase.dart';
+import 'package:transcribe/pages/landing.dart';
 
 void main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
   await dotenv.load(fileName: '.env');
   await initializeFirebase();
-  await FirebaseAuth.instance.signInAnonymously();
+  await initializeDependencies();
   runApp(const MyApp());
   FlutterNativeSplash.remove();
 }
@@ -31,12 +32,10 @@ class MyApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.black,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: const Placeholder(),
+      home: const LandingPage(),
     );
   }
 }
