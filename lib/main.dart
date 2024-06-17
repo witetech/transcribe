@@ -11,7 +11,7 @@ import 'package:transcribe/firebase.dart';
 void main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: '.env');
   await initializeFirebase();
   runApp(const MyApp());
   FlutterNativeSplash.remove();
