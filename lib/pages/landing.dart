@@ -35,7 +35,7 @@ class _LandingPageState extends State<LandingPage> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                signInWithGoogle();
+                signInWithGoogle(context);
               },
               child: Text(context.localization.loginWithGoogle),
             ),
@@ -45,7 +45,14 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Future<void> signInWithGoogle() async {
+  Future<void> signInWithGoogle(BuildContext context) async {
     await getIt<Auth>().signInWithGoogle();
+    if (context.mounted) {
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        '/transcriptions',
+        (route) => false,
+      );
+    }
   }
 }

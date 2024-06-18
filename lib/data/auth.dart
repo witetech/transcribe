@@ -14,6 +14,10 @@ class Auth {
   })  : _googleSignIn = googleSignIn,
         _firebaseAuth = firebaseAuth;
 
+  Future<bool> get isSignedIn async {
+    return _firebaseAuth.currentUser != null;
+  }
+
   Future<void> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication? auth = await googleUser?.authentication;
@@ -22,5 +26,9 @@ class Auth {
       idToken: auth?.idToken,
     );
     await _firebaseAuth.signInWithCredential(credential);
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
   }
 }
