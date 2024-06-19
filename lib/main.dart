@@ -11,6 +11,7 @@ import 'package:transcribe/core/auth.dart';
 import 'package:transcribe/core/di.dart';
 import 'package:transcribe/core/firebase.dart';
 import 'package:transcribe/pages/landing_page.dart';
+import 'package:transcribe/pages/recording_page.dart';
 import 'package:transcribe/pages/transcriptions_page.dart';
 
 void main() async {
@@ -46,6 +47,7 @@ class TranscribeApp extends StatelessWidget {
       routes: {
         '/landing': (context) => const LandingPage(),
         '/transcriptions': (context) => const TranscriptionsPage(),
+        '/recording': (context) => const RecordingPage(),
       },
     );
   }

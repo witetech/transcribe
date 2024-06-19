@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:transcribe/core/auth.dart';
 import 'package:transcribe/core/di.dart';
 import 'package:transcribe/extensions/build_context_extensions.dart';
+import 'package:transcribe/pages/recording_page.dart';
 
 class TranscriptionsPage extends StatefulWidget {
   const TranscriptionsPage({super.key});
@@ -52,7 +53,16 @@ class _TranscriptionsPageState extends State<TranscriptionsPage> {
 
   FloatingActionButton _buildFloatingActionButton() {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        showModalBottomSheet(
+          context: context,
+          isDismissible: false,
+          enableDrag: false,
+          builder: (context) {
+            return const RecordingPage();
+          },
+        );
+      },
       child: const Icon(Icons.multitrack_audio_rounded),
     );
   }
