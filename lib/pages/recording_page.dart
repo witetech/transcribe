@@ -22,7 +22,6 @@ class RecordingPage extends StatefulWidget {
 
 class _RecordingPageState extends State<RecordingPage> {
   bool _isRecording = false;
-  double? _dbLevel;
   int _durationInMilliseconds = 0;
 
   final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
@@ -80,7 +79,6 @@ class _RecordingPageState extends State<RecordingPage> {
       _recorderSubscription = _recorder.onProgress!.listen((e) {
         setState(() {
           _durationInMilliseconds = e.duration.inMilliseconds;
-          _dbLevel = e.decibels;
         });
       });
     }
