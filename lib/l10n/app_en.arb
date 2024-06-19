@@ -2,5 +2,11 @@
   "appName": "Transcribe",
   "loginTitle": "Transcribe",
   "loginSubtitle": "A simple tool for converting speech to text",
-  "loginWithGoogle": "Sign in with Google"
+  "loginWithGoogle": "Sign in with Google",
+  "transcriptionsTitle": "Transcriptions",
+  "recordingTitleIdle": "Start Recording",
+  "recordingTitleRecording": "Recording...",
+  "permissionRequiredDialogTitle": "Permission Required",
+  "permissionRequiredDialogDescription": "Please grant microphone permission in app settings.",
+  "permissionRequiredDialogNavigateToAppSettings": "Open Settings"
 }

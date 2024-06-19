@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // Project imports:
-import 'package:transcribe/data/auth.dart';
+import 'package:transcribe/core/auth.dart';
 
 final getIt = GetIt.instance;
 

@@ -7,11 +7,11 @@ import 'package:flutter_gen/gen_l10n/localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 // Project imports:
+import 'package:transcribe/core/auth.dart';
 import 'package:transcribe/core/di.dart';
 import 'package:transcribe/core/firebase.dart';
-import 'package:transcribe/data/auth.dart';
-import 'package:transcribe/pages/landing.dart';
-import 'package:transcribe/pages/transcriptions.dart';
+import 'package:transcribe/pages/landing_page.dart';
+import 'package:transcribe/pages/transcriptions_page.dart';
 
 void main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();

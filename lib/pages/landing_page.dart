@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import 'package:transcribe/core/auth.dart';
 import 'package:transcribe/core/di.dart';
-import 'package:transcribe/data/auth.dart';
 import 'package:transcribe/extensions/build_context_extensions.dart';
 
 class LandingPage extends StatefulWidget {
@@ -14,6 +14,10 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  Future<void> _signInWithGoogle() async {
+    await getIt<Auth>().signInWithGoogle();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,9 @@ class _LandingPageState extends State<LandingPage> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                signInWithGoogle(context);
+                _signInWithGoogle().then((_) {
+                  _navigateToTranscriptions();
+                });
               },
               child: Text(context.localization.loginWithGoogle),
             ),
@@ -45,14 +51,11 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Future<void> signInWithGoogle(BuildContext context) async {
-    await getIt<Auth>().signInWithGoogle();
-    if (context.mounted) {
-      Navigator.pushNamedAndRemoveUntil(
-        context,
-        '/transcriptions',
-        (route) => false,
-      );
-    }
+  void _navigateToTranscriptions() {
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/transcriptions',
+      (route) => false,
+    );
   }
 }

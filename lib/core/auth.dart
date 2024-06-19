@@ -21,11 +21,12 @@ class Auth {
   Future<void> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
     final GoogleSignInAuthentication? auth = await googleUser?.authentication;
-    final credential = GoogleAuthProvider.credential(
-      accessToken: auth?.accessToken,
-      idToken: auth?.idToken,
+    await _firebaseAuth.signInWithCredential(
+      GoogleAuthProvider.credential(
+        accessToken: auth?.accessToken,
+        idToken: auth?.idToken,
+      ),
     );
-    await _firebaseAuth.signInWithCredential(credential);
   }
 
   Future<void> signOut() async {

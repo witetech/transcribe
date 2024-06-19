@@ -1,10 +1,10 @@
 name: transcribe
 description: "A Flutter app for converting speech to text"
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -12,14 +12,17 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  audio_session: ^0.1.19
   cloud_firestore: ^5.0.1
   firebase_auth: ^5.1.0
   firebase_core: ^3.0.0
   firebase_crashlytics: ^4.0.0
   flutter_dotenv: ^5.1.0
   flutter_native_splash: ^2.4.0
+  flutter_sound: ^9.4.15
   get_it: ^7.7.0
   google_sign_in: ^6.2.1
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:
@@ -32,11 +35,10 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-  - .env
+    - .env
 
 flutter_native_splash:
   ios: true
   android: true
   color: "#000000"
   image: assets/images/app_icon.png
-  

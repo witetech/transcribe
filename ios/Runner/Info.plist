@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Transcribe uses the microphone to transcribe audio recordings.</string>
 		<key>GIDClientID</key>
 		<string>211956265326-gallvgssf8lj7qo2llu203lq5vm2fdsl.apps.googleusercontent.com</string>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
